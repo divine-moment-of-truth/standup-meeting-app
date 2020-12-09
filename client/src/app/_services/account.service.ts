@@ -27,7 +27,7 @@ export class AccountService {
   }
 
   register(model: any) {
-    return this.http.post(this.baseUrl + 'api/register', model).pipe(
+    return this.http.post(this.baseUrl + 'account/register', model).pipe(
       map((user: User) => {
         if (user) {
           localStorage.setItem('user', JSON.stringify(user));
@@ -40,11 +40,11 @@ export class AccountService {
 
   setCurrentUser(user: User) {
     this.currentUserSource.next(user);
-    this.currentUserSource.next(null);
   }
 
   logout() {
     localStorage.removeItem('user');
+    this.currentUserSource.next(null);
   }
 
 }
