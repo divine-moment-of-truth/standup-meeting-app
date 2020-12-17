@@ -8,6 +8,9 @@
     "types": [
       "jasmine",
       "node"
+    ],
+    "lib": [
+      "es2019"
     ]
   }
 }
